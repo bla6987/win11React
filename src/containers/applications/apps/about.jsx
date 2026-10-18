@@ -1,76 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useTranslation } from "react-i18next";
 
 export const AboutWin = () => {
-  const { abOpen } = useSelector((state) => state.desktop);
-  const { locked, booted } = useSelector((state) => state.wallpaper);
-  const [open, setOpen] = useState(
-    true && import.meta.env.MODE != "development",
-  );
-  const [timer, setTimer] = useState(
-    localStorage.getItem("closeAbout") == "true" ? 0 : 5,
-  );
+  const open = useSelector(state => state.desktop.abOpen);
   const dispatch = useDispatch();
-  const { t, i18n } = useTranslation();
-
-  const action = () => {
-    setOpen(false);
-    localStorage.setItem("closeAbout", true);
-    dispatch({ type: "DESKABOUT", payload: false });
-  };
-
-  useEffect(() => {
-    if (timer > 0 && !locked && booted) {
-      setTimeout(() => {
-        setTimer(timer - 1);
-      }, 1000);
-    }
-  }, [timer, locked, booted]);
-
-  return open || abOpen ? (
-    <div className="aboutApp floatTab dpShad">
-      <div className="content p-6">
-        <div className="text-xl font-semibold">{t("about.title")}</div>
-        <p>{t("about.opensource")}</p>
-        <p>
-          {t("about.licensed")}&nbsp;
-          <a
-            target="_blank"
-            href="https://github.com/blueedgetechno/win11React/blob/master/LICENSE"
-            rel="noreferrer"
-          >
-            {t("about.Creative-Commons")}
-          </a>
-          .
-        </p>
-        <p className="pl-4">
-          {t("about.contact")} :&nbsp;
-          <a target="_blank" href="mailto:blue@win11react.com" rel="noreferrer">
-            blue@win11react.com
-          </a>
-        </p>
-
-        <p>{t("about.notmicrosoft")}</p>
-        <p>
-          {t("about.alsonot")}&nbsp;
-          <a
-            target="_blank"
-            href="https://www.microsoft.com/en-in/windows-365"
-            rel="noreferrer"
-          >
-            Windows 365 cloud PC
-          </a>
-          .
-        </p>
-        <p>{t("about.microsoftcopywrite")}.</p>
-      </div>
-      <div className="okbtn px-6 py-4">
-        <div data-allow={timer == 0} onClick={timer == 0 && action}>
-          {t("about.understand")}{" "}
-          {timer > 0 ? <span>{`( ${timer} )`}</span> : null}
-        </div>
-      </div>
+  return open ? <section className="aboutApp floatTab dpShad" role="dialog" aria-labelledby="about-title">
+    <div className="content p-6">
+      <h1 id="about-title">About Desktop Practice</h1>
+      <p>An independent, open-source educational simulation. It uses sample files and never changes files on your computer.</p>
+      <p>Adapted from <a href="https://github.com/blueedgetechno/win11React" target="_blank" rel="noreferrer">Win11React</a>, created by blueedgetechno, with work by andrewstech and the Win11React contributors. Thank you for the original desktop interface.</p>
+      <p>This fork retains <a href="https://github.com/bla6987/win11React/blob/master/LICENSE" target="_blank" rel="noreferrer">CC0-1.0</a>. Its replacement artwork is original and shared under CC0-1.0. <a href="licenses/THIRD_PARTY_NOTICES.md" target="_blank" rel="noreferrer">Font Awesome Free and dyCalendar retain their own license notices.</a></p>
+      <p>Windows and Microsoft are trademarks of Microsoft. This project is independent and is not affiliated with or endorsed by Microsoft.</p>
+      <p><a href="https://github.com/bla6987/win11React" target="_blank" rel="noreferrer">Source code and credits</a></p>
     </div>
-  ) : null;
+    <div className="okbtn px-6 py-4"><button onClick={() => dispatch({ type: "DESKABOUT", payload: false })}>Close</button></div>
+  </section> : null;
 };

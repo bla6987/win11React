@@ -6,7 +6,7 @@
       "cards": [
         {
           "type": "mix",
-          "img": "https://c.saavncdn.com/artists/Arijit_Singh_500x500.jpg",
+          "img": "https://c.saavncdn.com/artists/Arijit_Singh_500x500.svg",
           "name": "Daily Mix 1",
           "desc": "Arijit Singh, Jubin Nautiyal, Darshan Raval and more",
           "data": [
@@ -24,7 +24,7 @@
         },
         {
           "type": "mix",
-          "img": "https://c.saavncdn.com/artists/Kavita_Seth_500x500.jpg",
+          "img": "https://c.saavncdn.com/artists/Kavita_Seth_500x500.svg",
           "name": "Daily Mix 2",
           "desc": "Kavita Seth, Alka Yagnik, Shubha Mudgal and more",
           "data": [
@@ -42,7 +42,7 @@
         },
         {
           "type": "mix",
-          "img": "https://c.saavncdn.com/067/NF-English-2014-500x500.jpg",
+          "img": "https://c.saavncdn.com/067/NF-English-2014-500x500.svg",
           "name": "Daily Mix 3",
           "desc": "NF, Billie Eilish, Powfu and more",
           "data": [
@@ -60,7 +60,7 @@
         },
         {
           "type": "mix",
-          "img": "https://c.saavncdn.com/365/Runaway-English-2015-500x500.jpg",
+          "img": "https://c.saavncdn.com/365/Runaway-English-2015-500x500.svg",
           "name": "Daily Mix 4",
           "desc": "AURORA, Ane Brun, SVRCINA and more",
           "data": [
@@ -78,7 +78,7 @@
         },
         {
           "type": "mix",
-          "img": "https://c.saavncdn.com/editorial/JhankarBeats_saavn_radio_20201215120219_500x500.jpg",
+          "img": "https://c.saavncdn.com/editorial/JhankarBeats_saavn_radio_20201215120219_500x500.svg",
           "name": "Discover weekly",
           "desc": "Your weekly mixtape of fresh music. Enjoy new music and deep cuts picked for you. Updates every Monday.",
           "data": [
@@ -92,7 +92,7 @@
         },
         {
           "type": "mix",
-          "img": "https://c.saavncdn.com/editorial/Chill_saavn_radio_500x500.jpg",
+          "img": "https://c.saavncdn.com/editorial/Chill_saavn_radio_500x500.svg",
           "name": "Chill station",
           "desc": "Arrive! Your one stop shop to relax and groove.",
           "data": [
@@ -108,7 +108,7 @@
         },
         {
           "type": "mix",
-          "img": "https://c.saavncdn.com/artists/Taylor_Swift_150x150.jpg",
+          "img": "https://c.saavncdn.com/artists/Taylor_Swift_150x150.svg",
           "name": "Daily Mix 5",
           "desc": "Taylor Swift, Katy Perry, Sophia Somajo and more",
           "data": ["ywYcM5y0", "CW0maQeQ", "Bx-MHJzW", "r1L8gMRa", "3zP4JQOU"]
@@ -120,34 +120,34 @@
       "cards": [
         {
           "type": "song",
-          "img": "https://c.saavncdn.com/228/Ek-Nazar-Hindi-2020-20200518060806-500x500.jpg",
+          "img": "https://c.saavncdn.com/228/Ek-Nazar-Hindi-2020-20200518060806-500x500.svg",
           "name": "Ek Nazar",
           "desc": "Kavita Seth",
           "data": "cgM-pRO9"
         },
         {
           "type": "song",
-          "img": "https://c.saavncdn.com/323/Better-Days-English-2020-20200325160343-500x500.jpg",
+          "img": "https://c.saavncdn.com/323/Better-Days-English-2020-20200325160343-500x500.svg",
           "name": "Better Days",
           "desc": "OneRepublic",
           "data": "JDJfNgEY"
         },
         {
           "type": "artist",
-          "img": "https://c.saavncdn.com/artists/Sanam_-Band-_002_20201020080410_500x500.jpg",
+          "img": "https://c.saavncdn.com/artists/Sanam_-Band-_002_20201020080410_500x500.svg",
           "name": "Sanam",
           "desc": "Band"
         },
         {
           "type": "album",
-          "img": "https://c.saavncdn.com/066/R-I-S-E-English-2020-20201119060656-500x500.jpg",
+          "img": "https://c.saavncdn.com/066/R-I-S-E-English-2020-20201119060656-500x500.svg",
           "name": "RISE",
           "desc": "By WILLOW, Jahnavi Harrison",
           "data": "23601363"
         },
         {
           "type": "album",
-          "img": "https://c.saavncdn.com/019/Still-Here-Hindi-2021-20210309211207-500x500.jpg",
+          "img": "https://c.saavncdn.com/019/Still-Here-Hindi-2021-20210309211207-500x500.svg",
           "name": "Still Here",
           "desc": "KR$NA",
           "data": "25817358"
@@ -159,70 +159,70 @@
       "cards": [
         {
           "type": "song",
-          "img": "https://c.saavncdn.com/994/Tamasha-Hindi-2015-500x500.jpg",
+          "img": "https://c.saavncdn.com/994/Tamasha-Hindi-2015-500x500.svg",
           "name": "Agar Tum Saath Ho",
           "desc": "Alka Yagnik, Arijit Singh",
           "data": "Ni6noMmw"
         },
         {
           "type": "song",
-          "img": "https://c.saavncdn.com/565/Human-English-2016-500x500.jpg",
+          "img": "https://c.saavncdn.com/565/Human-English-2016-500x500.svg",
           "name": "Human",
           "desc": "Rag'N'Bone Man",
           "data": "gLbWqLKC"
         },
         {
           "type": "song",
-          "img": "https://c.saavncdn.com/855/Homesick-English-2018-20181025170408-500x500.jpg",
+          "img": "https://c.saavncdn.com/855/Homesick-English-2018-20181025170408-500x500.svg",
           "name": "Falling",
           "desc": "Trevor Daniel",
           "data": "Jm6qLR3V"
         },
         {
           "type": "song",
-          "img": "https://c.saavncdn.com/790/Gangs-Of-Wasseypur-2012-500x500.jpg",
+          "img": "https://c.saavncdn.com/790/Gangs-Of-Wasseypur-2012-500x500.svg",
           "name": "Ik Bagal",
           "desc": "Piyush Mishra",
           "data": "Lo1zbaMa"
         },
         {
           "type": "song",
-          "img": "https://c.saavncdn.com/032/Jaane-Woh-Kaise-Sanam-Hindi-2017-20171204-500x500.jpg",
+          "img": "https://c.saavncdn.com/032/Jaane-Woh-Kaise-Sanam-Hindi-2017-20171204-500x500.svg",
           "name": "Jaane Woh Kaise",
           "desc": "Sanam (Band)",
           "data": "FHIMkqMv"
         },
         {
           "type": "song",
-          "img": "https://c.saavncdn.com/165/Stand-Up-From-Harriet--English-2019-20200414191117-500x500.jpg",
+          "img": "https://c.saavncdn.com/165/Stand-Up-From-Harriet--English-2019-20200414191117-500x500.svg",
           "name": "Stand Up (From Harriet)",
           "desc": "Cynthia Erivo",
           "data": "tWFkBuSv"
         },
         {
           "type": "song",
-          "img": "https://c.saavncdn.com/562/Different-World-English-2018-20181130144209-500x500.jpg",
+          "img": "https://c.saavncdn.com/562/Different-World-English-2018-20181130144209-500x500.svg",
           "name": "Lily",
           "desc": "Alan Walker, K-391, ...",
           "data": "1c-VGSyw"
         },
         {
           "type": "song",
-          "img": "https://c.saavncdn.com/065/Citylights-Hindi-2014-20190607111647-500x500.jpg",
+          "img": "https://c.saavncdn.com/065/Citylights-Hindi-2014-20190607111647-500x500.svg",
           "name": "Muskurane",
           "desc": "Arijit Singh, Jeet Gannguli",
           "data": "1K9IsVVU"
         },
         {
           "type": "song",
-          "img": "https://c.saavncdn.com/702/Dee-MC--Hindi-2019-20191015104339-500x500.jpg",
+          "img": "https://c.saavncdn.com/702/Dee-MC--Hindi-2019-20191015104339-500x500.svg",
           "name": "Rang",
           "desc": "Dee MC (Deepa Unnikrishnan)",
           "data": "4bjKwhJ1"
         },
         {
           "type": "song",
-          "img": "https://c.saavncdn.com/024/Madness-English-2016-500x500.jpg",
+          "img": "https://c.saavncdn.com/024/Madness-English-2016-500x500.svg",
           "name": "Game of Survival",
           "desc": "Ruelle",
           "data": "dN9V6uUk"
@@ -234,77 +234,77 @@
       "cards": [
         {
           "type": "album",
-          "img": "https://c.saavncdn.com/531/Gulaal-Hindi-2009-500x500.jpg",
+          "img": "https://c.saavncdn.com/531/Gulaal-Hindi-2009-500x500.svg",
           "name": "Gulaal",
           "desc": "Piyush Mishra",
           "data": "1028531"
         },
         {
           "type": "album",
-          "img": "https://c.saavncdn.com/432/Raincoat-Hindi-2004-20210125130707-500x500.jpg",
+          "img": "https://c.saavncdn.com/432/Raincoat-Hindi-2004-20210125130707-500x500.svg",
           "name": "Raincoat",
           "desc": "Hariharan, Meena Mishra",
           "data": "15827352"
         },
         {
           "type": "album",
-          "img": "https://c.saavncdn.com/742/A-Star-Is-Born-Soundtrack-Without-Dialogue--English-2018-20181004234940-500x500.jpg",
+          "img": "https://c.saavncdn.com/742/A-Star-Is-Born-Soundtrack-Without-Dialogue--English-2018-20181004234940-500x500.svg",
           "name": "A Star Is Born Soundtrack",
           "desc": "Lady Gaga, Bradley Cooper",
           "data": "14014305"
         },
         {
           "type": "album",
-          "img": "https://sklktcdnems06.cdnsrv.jio.com/c.saavncdn.com/113/Main-Aur-Mera-Saya-Bhupen-Hazarika-2001-500x500.jpg",
+          "img": "https://sklktcdnems06.cdnsrv.jio.com/c.saavncdn.com/113/Main-Aur-Mera-Saya-Bhupen-Hazarika-2001-500x500.svg",
           "name": "Main Aur Mera Saya",
           "desc": "Gulzar, Bhupen Hazarika",
           "data": "1066045"
         },
         {
           "type": "album",
-          "img": "https://c.saavncdn.com/228/Lover-English-2019-20190823031817-500x500.jpg",
+          "img": "https://c.saavncdn.com/228/Lover-English-2019-20190823031817-500x500.svg",
           "name": "Lover",
           "desc": "Taylor Swift",
           "data": "17037435"
         },
         {
           "type": "album",
-          "img": "https://c.saavncdn.com/430/Aashiqui-2-Hindi-2013-500x500.jpg",
+          "img": "https://c.saavncdn.com/430/Aashiqui-2-Hindi-2013-500x500.svg",
           "name": "Aashiqui 2",
           "desc": "Palak Muchhal, Arijit Singh",
           "data": "1139549"
         },
         {
           "type": "album",
-          "img": "https://c.saavncdn.com/369/I-Lost-a-Friend-English-2019-20200104144314-500x500.jpg",
+          "img": "https://c.saavncdn.com/369/I-Lost-a-Friend-English-2019-20200104144314-500x500.svg",
           "name": "I Lost a Friend",
           "desc": "FINNEAS",
           "data": "15655769"
         },
         {
           "type": "album",
-          "img": "https://c.saavncdn.com/078/MELT-English-2018-20180919230507-500x500.jpg",
+          "img": "https://c.saavncdn.com/078/MELT-English-2018-20180919230507-500x500.svg",
           "name": "MELT",
           "desc": "SHAED",
           "data": "13912413"
         },
         {
           "type": "album",
-          "img": "https://c.saavncdn.com/836/Malang-Unleash-The-Madness-Hindi-2020-20200619175502-500x500.jpg",
+          "img": "https://c.saavncdn.com/836/Malang-Unleash-The-Madness-Hindi-2020-20200619175502-500x500.svg",
           "name": "Malang",
           "desc": "2020",
           "data": "18574421"
         },
         {
           "type": "album",
-          "img": "https://c.saavncdn.com/585/Cradles-English-2019-20191028124508-500x500.jpg",
+          "img": "https://c.saavncdn.com/585/Cradles-English-2019-20191028124508-500x500.svg",
           "name": "Cradles",
           "desc": "Sub Urban",
           "data": "17442635"
         },
         {
           "type": "album",
-          "img": "https://c.saavncdn.com/662/Chalo-Chalein-Hindi-2021-20210208203817-500x500.jpg",
+          "img": "https://c.saavncdn.com/662/Chalo-Chalein-Hindi-2021-20210208203817-500x500.svg",
           "name": "Chalo Chalein",
           "desc": "Ritviz",
           "data": "25211111"
@@ -316,98 +316,98 @@
       "cards": [
         {
           "type": "artist",
-          "img": "https://c.saavncdn.com/artists/Ed_Sheeran_500x500.jpg",
+          "img": "https://c.saavncdn.com/artists/Ed_Sheeran_500x500.svg",
           "name": "Ed Sheeran",
           "desc": "Artist"
         },
         {
           "type": "artist",
-          "img": "https://c.saavncdn.com/artists/Selena_Gomez_500x500.jpg",
+          "img": "https://c.saavncdn.com/artists/Selena_Gomez_500x500.svg",
           "name": "Selena Gomez",
           "desc": "Artist"
         },
         {
           "type": "artist",
           "name": "Neeti Mohan",
-          "img": "https://c.saavncdn.com/artists/Neeti_Mohan_003_20200211100510_500x500.jpg",
+          "img": "https://c.saavncdn.com/artists/Neeti_Mohan_003_20200211100510_500x500.svg",
           "desc": "Artist"
         },
         {
           "type": "artist",
           "name": "Alan Walker",
-          "img": "https://c.saavncdn.com/artists/Alan_Walker_002_20190507112228_500x500.jpg",
+          "img": "https://c.saavncdn.com/artists/Alan_Walker_002_20190507112228_500x500.svg",
           "desc": "Artist"
         },
         {
           "type": "artist",
           "name": "Armaan Malik",
-          "img": "https://c.saavncdn.com/artists/Armaan_Malik_500x500.jpg",
+          "img": "https://c.saavncdn.com/artists/Armaan_Malik_500x500.svg",
           "desc": "Artist"
         },
         {
           "type": "artist",
           "name": "Shalmali",
-          "img": "https://c.saavncdn.com/artists/Shalmali_Kholgade_004_20200226073940_500x500.jpg",
+          "img": "https://c.saavncdn.com/artists/Shalmali_Kholgade_004_20200226073940_500x500.svg",
           "desc": "Artist"
         },
         {
           "type": "artist",
           "name": "Justin Bieber",
-          "img": "https://c.saavncdn.com/artists/Justin_Bieber_500x500.jpg",
+          "img": "https://c.saavncdn.com/artists/Justin_Bieber_500x500.svg",
           "desc": "Artist"
         },
         {
           "type": "artist",
           "name": "DJ Snake",
-          "img": "https://c.saavncdn.com/artists/Dj_Snake_500x500.jpg",
+          "img": "https://c.saavncdn.com/artists/Dj_Snake_500x500.svg",
           "desc": "Artist"
         },
         {
           "type": "artist",
           "name": "Sia",
-          "img": "https://c.saavncdn.com/artists/Sia_500x500.jpg",
+          "img": "https://c.saavncdn.com/artists/Sia_500x500.svg",
           "desc": "Artist"
         },
         {
           "type": "artist",
           "name": "Arijit Singh",
-          "img": "https://c.saavncdn.com/artists/Arijit_Singh_500x500.jpg",
+          "img": "https://c.saavncdn.com/artists/Arijit_Singh_500x500.svg",
           "desc": "Artist"
         },
         {
           "type": "artist",
           "name": "Alessia Cara",
-          "img": "https://c.saavncdn.com/artists/Alessia_Cara_20190306095839_500x500.jpg",
+          "img": "https://c.saavncdn.com/artists/Alessia_Cara_20190306095839_500x500.svg",
           "desc": "Artist"
         },
         {
           "type": "artist",
           "name": "The Chainsmokers",
-          "img": "https://c.saavncdn.com/artists/The_Chainsmokers_500x500.jpg",
+          "img": "https://c.saavncdn.com/artists/The_Chainsmokers_500x500.svg",
           "desc": "Artist"
         },
         {
           "type": "artist",
           "name": "Alec Benjamin",
-          "img": "https://c.saavncdn.com/artists/Alec_Benjamin_000_20191129075848_500x500.jpg",
+          "img": "https://c.saavncdn.com/artists/Alec_Benjamin_000_20191129075848_500x500.svg",
           "desc": "Artist"
         },
         {
           "type": "artist",
           "name": "Darshan Raval",
-          "img": "https://c.saavncdn.com/artists/Darshan_Raval_500x500.jpg",
+          "img": "https://c.saavncdn.com/artists/Darshan_Raval_500x500.svg",
           "desc": "Artist"
         },
         {
           "type": "artist",
           "name": "Atif Aslam",
-          "img": "https://c.saavncdn.com/artists/Atif_Aslam_500x500.jpg",
+          "img": "https://c.saavncdn.com/artists/Atif_Aslam_500x500.svg",
           "desc": "Artist"
         },
         {
           "type": "artist",
           "name": "Monali Thakur",
-          "img": "https://c.saavncdn.com/artists/Monali_Thakur_500x500.jpg",
+          "img": "https://c.saavncdn.com/artists/Monali_Thakur_500x500.svg",
           "desc": "Artist"
         }
       ]
@@ -428,7 +428,7 @@
       "featured_artists_id": "",
       "singers": "Shubha Mudgal",
       "starring": "",
-      "image": "https://c.saavncdn.com/432/Raincoat-Hindi-2004-20210125130707-150x150.jpg",
+      "image": "https://c.saavncdn.com/432/Raincoat-Hindi-2004-20210125130707-150x150.svg",
       "label": "Shree Venkatesh Films Pvt. Ltd.",
       "albumid": "15827352",
       "language": "hindi",
@@ -477,7 +477,7 @@
       "featured_artists_id": "",
       "singers": "Kavita Seth",
       "starring": "",
-      "image": "https://c.saavncdn.com/228/Ek-Nazar-Hindi-2020-20200518060806-150x150.jpg",
+      "image": "https://c.saavncdn.com/228/Ek-Nazar-Hindi-2020-20200518060806-150x150.svg",
       "label": "Kavita Seth",
       "albumid": "20439730",
       "language": "hindi",
@@ -524,7 +524,7 @@
       "featured_artists_id": "",
       "singers": "Shubha Mudgal",
       "starring": "",
-      "image": "https://c.saavncdn.com/432/Raincoat-Hindi-2004-20210125130707-150x150.jpg",
+      "image": "https://c.saavncdn.com/432/Raincoat-Hindi-2004-20210125130707-150x150.svg",
       "label": "Shree Venkatesh Films Pvt. Ltd.",
       "albumid": "15827352",
       "language": "hindi",
@@ -573,7 +573,7 @@
       "featured_artists_id": "",
       "singers": "Piyush Mishra",
       "starring": "",
-      "image": "https://c.saavncdn.com/531/Gulaal-Hindi-2009-150x150.jpg",
+      "image": "https://c.saavncdn.com/531/Gulaal-Hindi-2009-150x150.svg",
       "label": "",
       "albumid": "1028531",
       "language": "hindi",
@@ -622,7 +622,7 @@
       "featured_artists_id": "672167, 882826",
       "singers": "Afsana Khan, Harrdy Sandhu, Sargun Mehta",
       "starring": "",
-      "image": "https://c.saavncdn.com/887/Titliaan-Punjabi-2020-20201107053501-150x150.jpg",
+      "image": "https://c.saavncdn.com/887/Titliaan-Punjabi-2020-20201107053501-150x150.svg",
       "label": "Universal Music India Pvt Ltd.",
       "albumid": "23384511",
       "language": "punjabi",
@@ -674,7 +674,7 @@
       "featured_artists_id": "",
       "singers": "Stebin Ben",
       "starring": "Dev Patel, Anupam Kher",
-      "image": "https://c.saavncdn.com/704/Hotel-Mumbai-Hindi-2019-20191122162726-150x150.jpg",
+      "image": "https://c.saavncdn.com/704/Hotel-Mumbai-Hindi-2019-20191122162726-150x150.svg",
       "label": "Zee Music Co.",
       "albumid": "17920341",
       "language": "hindi",
@@ -727,7 +727,7 @@
       "featured_artists_id": "",
       "singers": "Billie Eilish",
       "starring": "",
-      "image": "https://c.saavncdn.com/640/WHEN-WE-ALL-FALL-ASLEEP-WHERE-DO-WE-GO--English-2019-20190328231137-150x150.jpg",
+      "image": "https://c.saavncdn.com/640/WHEN-WE-ALL-FALL-ASLEEP-WHERE-DO-WE-GO--English-2019-20190328231137-150x150.svg",
       "label": "Darkroom/Interscope Records",
       "albumid": "15478520",
       "language": "english",
@@ -776,7 +776,7 @@
       "featured_artists_id": "",
       "singers": "Powfu, Beabadoobee, Powfu &amp; Beabadoobee",
       "starring": "",
-      "image": "https://c.saavncdn.com/180/death-bed-English-2020-20200228133600-150x150.jpg",
+      "image": "https://c.saavncdn.com/180/death-bed-English-2020-20200228133600-150x150.svg",
       "label": "Columbia",
       "albumid": "18957637",
       "language": "english",
@@ -829,7 +829,7 @@
       "featured_artists_id": "",
       "singers": "Willow, Jahnavi Harrison",
       "starring": "",
-      "image": "https://c.saavncdn.com/066/R-I-S-E-English-2020-20201119060656-150x150.jpg",
+      "image": "https://c.saavncdn.com/066/R-I-S-E-English-2020-20201119060656-150x150.svg",
       "label": "MSFTSMusic / Roc Nation Records, LLC",
       "albumid": "23601363",
       "language": "sanskrit",
@@ -877,7 +877,7 @@
       "featured_artists_id": "",
       "singers": "NF",
       "starring": "",
-      "image": "https://c.saavncdn.com/885/Perception-English-2017-20171005000746-150x150.jpg",
+      "image": "https://c.saavncdn.com/885/Perception-English-2017-20171005000746-150x150.svg",
       "label": "NF Real Music",
       "albumid": "11597689",
       "language": "english",
@@ -926,7 +926,7 @@
       "featured_artists_id": "",
       "singers": "Aurora",
       "starring": "",
-      "image": "https://c.saavncdn.com/365/Runaway-English-2015-150x150.jpg",
+      "image": "https://c.saavncdn.com/365/Runaway-English-2015-150x150.svg",
       "label": "Universal Music India Pvt Ltd.",
       "albumid": "1221938",
       "language": "english",
@@ -973,7 +973,7 @@
       "featured_artists_id": "",
       "singers": "Sasha Alex Sloan",
       "starring": "",
-      "image": "https://c.saavncdn.com/564/Older-English-2018-20181103012920-150x150.jpg",
+      "image": "https://c.saavncdn.com/564/Older-English-2018-20181103012920-150x150.svg",
       "label": "RCA Records Label",
       "albumid": "14267221",
       "language": "english",
@@ -1012,7 +1012,7 @@
   "playlist": [
     {
       "type": "play",
-      "img": "/img/asset/hindi.jpg",
+      "img": "/img/asset/hindi.svg",
       "name": "Hindi",
       "desc": "Created by blueedge",
       "data": [
@@ -1039,7 +1039,7 @@
     },
     {
       "type": "play",
-      "img": "/img/asset/english.jpg",
+      "img": "/img/asset/english.svg",
       "name": "English",
       "desc": "Created by blueedge",
       "data": [
@@ -1065,7 +1065,7 @@
     },
     {
       "type": "play",
-      "img": "/img/asset/community.jpg",
+      "img": "/img/asset/community.svg",
       "name": "Community",
       "desc": "Created by community",
       "data": [

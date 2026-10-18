@@ -23,11 +23,17 @@ String.prototype.count = function (c) {
   return result;
 };
 
+// Only original local artwork is used by this fork, including fallback artwork.
+const artwork = (src) => {
+  if (!src || src.includes("undefined") || /^(https?:|data:|blob:)/i.test(src)) return "img/placeholder.svg";
+  return src.replace(/\.(png|jpg|jpeg|webp|gif)$/i, ".svg");
+};
+
 export const Icon = (props) => {
   const sidepane = useSelector((state) => state.sidepane);
 
   const dispatch = useDispatch();
-  var src = `img/icon/${props.ui != null ? "ui/" : ""}${props.src}.png`;
+  var src = `img/icon/${props.ui != null ? "ui/" : ""}${props.src}.svg`;
   if (props.ext != null || (props.src && props.src.includes("http"))) {
     src = props.src;
   }
@@ -60,6 +66,7 @@ export const Icon = (props) => {
         data-action={props.click}
         data-payload={props.payload}
         data-menu={props.menu}
+        data-name={props.name}
       >
         <FontAwesomeIcon
           data-flip={props.flip != null}
@@ -86,6 +93,7 @@ export const Icon = (props) => {
         data-action={props.click}
         data-payload={props.payload}
         data-menu={props.menu}
+        data-name={props.name}
       >
         <CustomIcon
           data-flip={props.flip != null}
@@ -110,6 +118,7 @@ export const Icon = (props) => {
         data-payload={props.payload}
         onClick={props.onClick || (props.pr && clickDispatch) || null}
         data-menu={props.menu}
+        data-name={props.name}
         data-pr={props.pr}
       >
         {props.className == "tsIcon" ? (
@@ -132,7 +141,7 @@ export const Icon = (props) => {
               data-flip={props.flip != null}
               data-invert={props.invert != null ? "true" : "false"}
               data-rounded={props.rounded != null ? "true" : "false"}
-              src={src}
+              src={artwork(src)}
               style={{
                 margin: props.margin || null,
               }}
@@ -150,7 +159,7 @@ export const Icon = (props) => {
             data-flip={props.flip != null}
             data-invert={props.invert != null ? "true" : "false"}
             data-rounded={props.rounded != null ? "true" : "false"}
-            src={src}
+            src={artwork(src)}
             style={{
               margin: props.margin || null,
             }}
@@ -164,14 +173,15 @@ export const Icon = (props) => {
 
 export const Image = (props) => {
   const dispatch = useDispatch();
-  var src = `img/${(props.dir ? props.dir + "/" : "") + props.src}.png`;
+  var src = `img/${(props.dir ? props.dir + "/" : "") + props.src}.svg`;
   if (props.ext != null) {
     src = props.src;
   }
 
   const errorHandler = (e) => {
     if (props.err) {
-      e.currentTarget.src = props.err;
+      e.currentTarget.onerror = null;
+      e.currentTarget.src = artwork(props.err);
     }
   };
 
@@ -191,7 +201,7 @@ export const Image = (props) => {
       className={`imageCont prtclk ${props.className || ""}`}
       id={props.id}
       style={{
-        backgroundImage: props.back && `url(${src})`,
+        backgroundImage: props.back && `url(${artwork(src)})`,
       }}
       data-back={props.back != null}
       onClick={props.onClick || (props.click && clickDispatch)}
@@ -207,7 +217,7 @@ export const Image = (props) => {
             data-free={props.free != null}
             data-var={props.var}
             loading={props.lazy ? "lazy" : null}
-            src={src}
+            src={artwork(src)}
             alt=""
             onError={errorHandler}
           />
@@ -218,7 +228,7 @@ export const Image = (props) => {
             data-free={props.free != null}
             data-var={props.var}
             loading={props.lazy ? "lazy" : null}
-            src={src}
+            src={artwork(src)}
             alt=""
             onError={errorHandler}
           />

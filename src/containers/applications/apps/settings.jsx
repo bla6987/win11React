@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { changeTheme } from "../../../actions";
-import { Image, ToolBar } from "../../../utils/general";
+import { Icon, Image, ToolBar } from "../../../utils/general";
 import LangSwitch from "./assets/Langswitch";
 import "./assets/settings.scss";
 import data from "./assets/settingsData.json";
@@ -68,7 +68,7 @@ export const Settings = () => {
             <div className="nav_top">
               <div className="account" onClick={() => setPage("Accounts")}>
                 <img
-                  src="img/settings/defAccount.webp"
+                  src="img/settings/defAccount.svg"
                   alt=""
                   height={60}
                   width={60}
@@ -97,7 +97,7 @@ export const Settings = () => {
                     }}
                   >
                     <img
-                      src={`img/settings/${e}.webp`}
+                      src={`img/settings/${e}.svg`}
                       alt=""
                       height={16}
                       width={16}
@@ -136,7 +136,7 @@ export const Settings = () => {
                               <div className="right">
                                 <div className="column">
                                   <img
-                                    src="https://upload.wikimedia.org/wikipedia/commons/2/25/Microsoft_icon.svg"
+                                    src="img/icon/settings.svg"
                                     height={20}
                                     alt=""
                                   />
@@ -153,7 +153,7 @@ export const Settings = () => {
                                   onClick={() => setPage("Windows Update")}
                                 >
                                   <img
-                                    src="img/settings/Windows Update.webp"
+                                    src="img/settings/Windows Update.svg"
                                     alt=""
                                     height={20}
                                   />
@@ -173,7 +173,7 @@ export const Settings = () => {
                             <div key={i} className="netTop">
                               <div>
                                 <img
-                                  src="img/settings/wifi.png"
+                                  src="img/settings/wifi.svg"
                                   alt=""
                                   height={100}
                                 />
@@ -183,14 +183,14 @@ export const Settings = () => {
                                 </div>
                               </div>
                               <div className="box">
-                                <span className="settingsIcon"></span>
+                                <Icon src="settings" width={20} />
                                 <div>
                                   <h3>Properties</h3>
                                   <p>Public network 5 Ghz</p>
                                 </div>
                               </div>
                               <div className="box">
-                                <span className="settingsIcon"></span>
+                                <Icon src="settings" width={20} />
                                 <div>
                                   <h3>Data Usage</h3>
                                   <p>
@@ -219,11 +219,11 @@ export const Settings = () => {
                                         className={
                                           wall.src.includes(e) ? "selected" : ""
                                         }
-                                        src={`img/wallpaper/${e}/img0.jpg`}
+                                        src={`img/wallpaper/${e}/img0.svg`}
                                         ext
                                         onClick={handleWallAndTheme}
                                         click="WALLSET"
-                                        payload={`${e}/img0.jpg`}
+                                        payload={`${e}/img0.svg`}
                                       />
                                     );
                                   })}
@@ -235,7 +235,7 @@ export const Settings = () => {
                           return (
                             <div key={i} className="accountsTop ">
                               <img
-                                src="img/settings/defAccount.webp"
+                                src="img/settings/defAccount.svg"
                                 alt=""
                                 width={90}
                               />
@@ -261,7 +261,7 @@ export const Settings = () => {
                         case "langSwitcher":
                           return (
                             <div key={i} className="tile langSwitcherTile">
-                              <span className="settingsIcon"></span>
+                              <Icon src="settings" width={20} />
                               <div className="tile_content">
                                 <p>Windows display language</p>
                                 <p className="tile_desc">
@@ -277,7 +277,7 @@ export const Settings = () => {
                             <div key={i} className="updateTop">
                               <div className="left">
                                 <img
-                                  src="img/settings/update.png"
+                                  src="img/settings/update.svg"
                                   width={90}
                                   alt=""
                                 />
@@ -317,7 +317,7 @@ export const Settings = () => {
                         case "tile thin-blue":
                           return (
                             <div key={e.name} className={e.type}>
-                              <span className="settingsIcon">{e.icon}</span>
+                              <Icon src="settings" width={20} />
                               <div>
                                 <p>{e.name}</p>
                                 <p className="tile_desc">{e.desc}</p>

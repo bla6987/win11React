@@ -9,19 +9,19 @@ export const DScord = () => {
   const [url, setUrl] = useState(null);
   const servers = [
     {
-      src: "arrtective.png",
+      src: "arrtective.svg",
       link: "https://discord.io/arttective",
     },
     {
-      src: "mimi.png",
+      src: "mimi.svg",
       link: "https://discord.gg/AGSCfjgDMc",
     },
     {
-      src: "narjiday.png",
+      src: "narjiday.svg",
       link: "https://discord.gg/K9wcgZJfXS",
     },
     {
-      src: "aliyss.png",
+      src: "aliyss.svg",
       link: "https://discord.gg/zAypMTH",
     },
   ];
@@ -61,7 +61,7 @@ export const DScord = () => {
             <div className="servCont noscroll">
               <Icon
                 className="dsIcon"
-                src="./img/asset/discord.png"
+                src="./img/asset/discord.svg"
                 ext
                 width={26}
                 click="EXTERNAL"
@@ -70,7 +70,7 @@ export const DScord = () => {
               <hr />
               <Icon
                 className="wnServer svIcon"
-                src="./img/asset/server.gif"
+                src="./img/asset/server.svg"
                 width={48}
                 click="EXTERNAL"
                 payload="https://discord.gg/9jtcVZ3tWm"

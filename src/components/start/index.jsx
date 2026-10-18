@@ -44,6 +44,7 @@ export const DesktopApp = () => {
     arr.apps = tmpApps;
     return arr;
   });
+  const binCount = useSelector(state => state.files.data.getId(state.files.data.special["%recyclebin%"]).data.length);
   const dispatch = useDispatch();
 
   return (
@@ -52,11 +53,14 @@ export const DesktopApp = () => {
         deskApps.apps.map((app, i) => {
           return (
             // to allow it to be focusable (:focus)
-            <div key={i} className="dskApp" tabIndex={0}>
+            <div key={i} className="dskApp" tabIndex={0} role="button" aria-label={app.name} onKeyDown={e => {
+              if (e.key === "Enter" || e.key === " ") { e.preventDefault(); dispatch({ type: app.action, payload: app.payload || "full" }); }
+            }}>
               <Icon
+                name={app.name}
                 click={app.action}
                 className="dskIcon prtclk"
-                src={app.icon}
+                src={app.name === "Recycle Bin" && binCount ? "bin1" : app.icon}
                 payload={app.payload || "full"}
                 pr
                 width={Math.round(deskApps.size * 36)}

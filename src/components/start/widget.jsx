@@ -44,7 +44,7 @@ export const WidPane = () => {
                 <div className="wthInfo">
                   <div className="wthTemp">
                     <Icon
-                      src={`https://www.metaweather.com/static/img/weather/png/64/${widget.data.weather.icon}.png`}
+                      src={`https://www.metaweather.com/static/img/weather/png/64/${widget.data.weather.icon}.svg`}
                       ext
                       width={32}
                     />
@@ -71,7 +71,7 @@ export const WidPane = () => {
                       <div key={i} className="weekDay">
                         <div>{i == 0 ? "Today" : item.day}</div>
                         <Icon
-                          src={`https://www.metaweather.com/static/img/weather/png/64/${item.icon}.png`}
+                          src={`https://www.metaweather.com/static/img/weather/png/64/${item.icon}.svg`}
                           ext
                           width={24}
                         />
@@ -122,14 +122,8 @@ export const WidPane = () => {
                 <div
                   className="short1 ltShad"
                   style={{
-                    "--afterBack": `url(${
-                      widget.data.event.pages[0].thumbnail &&
-                      widget.data.event.pages[0].thumbnail.source
-                    })`,
-                    backgroundImage: `url(${
-                      widget.data.event.pages[0].thumbnail &&
-                      widget.data.event.pages[0].thumbnail.source
-                    })`,
+                    "--afterBack": "url(img/placeholder.svg)",
+                    backgroundImage: "url(img/placeholder.svg)",
                   }}
                 >
                   <div className="shName">
@@ -179,7 +173,7 @@ export const WidPane = () => {
                         target="_blank"
                         style={{
                           "--backgrad": getRandom(2),
-                          backgroundImage: `url(${article.urlToImage})`,
+                          backgroundImage: "url(img/placeholder.svg)",
                         }}
                         href={article.url}
                         rel="noopener noreferrer"

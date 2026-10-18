@@ -47,13 +47,6 @@ const apps = [
     action: "MSEDGE",
   },
   {
-    name: "Buy me a coffee",
-    icon: "buyme",
-    type: "app",
-    action: "EXTERNAL",
-    payload: "https://www.buymeacoffee.com/blueedgetechno",
-  },
-  {
     name: "Store",
     icon: "store",
     type: "app",
@@ -63,9 +56,10 @@ const apps = [
     name: "Recycle Bin",
     icon: "bin0",
     type: "app",
+    action: "RECYCLEBIN",
   },
   {
-    name: "Blue",
+    name: "owner",
     icon: "win/user",
     type: "app",
     action: "EXPLORER",

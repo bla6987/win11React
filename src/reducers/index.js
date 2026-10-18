@@ -12,7 +12,7 @@ import globalReducer from "./globals";
 import settReducer from "./settings";
 import fileReducer from "./files";
 
-const allReducers = combineReducers({
+const combinedReducers = combineReducers({
   wallpaper: wallReducer,
   taskbar: taskReducer,
   desktop: deskReducer,
@@ -25,6 +25,16 @@ const allReducers = combineReducers({
   setting: settReducer,
   files: fileReducer,
 });
+
+const allReducers = (state, action) => {
+  if (state && ["FILERESTORE", "FILERECYCLE"].includes(action.type)) {
+    const item = state.files.data.getId(action.payload);
+    const canRestore = action.type === "FILERESTORE" && item?.host?.id === state.files.data.special["%recyclebin%"];
+    const canRecycle = action.type === "FILERECYCLE" && item && !state.files.data.isRecycled(item.id);
+    if (item?.type === "shortcut" && (canRestore || canRecycle)) action = { ...action, shortcut: item.data };
+  }
+  return combinedReducers(state, action);
+};
 
 var store = createStore(allReducers);
 

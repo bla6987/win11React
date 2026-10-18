@@ -51,7 +51,7 @@ export const Getstarted = () => {
                   <img
                     alt="left image"
                     id="left_img"
-                    src="img/oobe/window11_oobe_region.png"
+                    src="img/oobe/window11_oobe_region.svg"
                   />
                 </div>
                 <div className="right">
@@ -77,7 +77,7 @@ export const Getstarted = () => {
                 <div className="left">
                   <img
                     id="left_img"
-                    src="img/oobe/window11_oobe_keyb_layout.png"
+                    src="img/oobe/window11_oobe_keyb_layout.svg"
                   />
                 </div>
                 <div className="right">
@@ -96,10 +96,10 @@ export const Getstarted = () => {
             {pageNo === 3 ? (
               <>
                 <div className="left">
-                  <img id="left_img" src="img/oobe/window11_oobe_update.png" />
+                  <img id="left_img" src="img/oobe/window11_oobe_update.svg" />
                 </div>
                 <div className="right align">
-                  <img id="loader" src="img/oobe/window11_oobe_region.png" />
+                  <img id="loader" src="img/oobe/window11_oobe_region.svg" />
                   Checking for updates.
                 </div>
               </>
@@ -107,7 +107,7 @@ export const Getstarted = () => {
             {pageNo === 4 ? (
               <>
                 <div className="left">
-                  <img id="left_img" src="img/oobe/window11_oobe_name.png" />
+                  <img id="left_img" src="img/oobe/window11_oobe_name.svg" />
                 </div>
                 <div className="right">
                   <div className="header mb-2">Let's name your PC</div>
@@ -136,7 +136,7 @@ export const Getstarted = () => {
             {pageNo === 5 ? (
               <>
                 <div className="left">
-                  <img id="left_img" src="img/oobe/window11_oobe_wifi.png" />
+                  <img id="left_img" src="img/oobe/window11_oobe_wifi.svg" />
                 </div>
                 <div className="right">
                   <div className="header">
@@ -171,7 +171,7 @@ export const Getstarted = () => {
             {pageNo === 6 ? (
               <>
                 <div className="left">
-                  <img id="left_img" src="img/oobe/window11_oobe_update.png" />
+                  <img id="left_img" src="img/oobe/window11_oobe_update.svg" />
                 </div>
                 <div className="right">
                   <div className="header mb-8">The setup has completed.</div>
@@ -189,7 +189,7 @@ export const Getstarted = () => {
             <img
               alt="accessibility"
               className="mr-4 acsblty"
-              src="img/oobe/window11_oobe_accessibility.png"
+              src="img/oobe/window11_oobe_accessibility.svg"
               width={16}
             />
             <Icon

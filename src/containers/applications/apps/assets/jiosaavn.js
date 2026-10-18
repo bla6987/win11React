@@ -30,7 +30,7 @@ class JioSaavn {
         id: "Szz0RZFb", //"Szz0RZFb",
         album: "Raincoat",
         albumArt:
-          "https://c.saavncdn.com/432/Raincoat-Hindi-2004-20210125130707-150x150.jpg",
+          "https://c.saavncdn.com/432/Raincoat-Hindi-2004-20210125130707-150x150.svg",
         name: "Piya Tora Kaisa Abhiman",
         artist: "Shubha Mudgal",
         duration: 297,

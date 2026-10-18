@@ -25,6 +25,7 @@ defState.hz = 2;
 
 const appReducer = (state = defState, action) => {
   var tmpState = { ...state };
+  if (action.type === "RECYCLEBIN") action = { ...action, type: "EXPLORER", payload: "full" };
   if (action.type == "EDGELINK") {
     var obj = { ...tmpState["edge"] };
     if (action.payload && action.payload.startsWith("http")) {

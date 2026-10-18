@@ -323,3 +323,20 @@
 .hvtheme:hover {
   background: var(--hover-bg);
 }
+
+.file-actions {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 10px;
+  padding: 8px 14px; border-bottom: 1px solid #9aa9b844;
+  background: var(--fakeMica); color: var(--txt-col); font-size: 13px;
+}
+.file-actions button, .file-confirm button {
+  font: inherit; padding: 7px 12px; border: 1px solid #8c9aaa;
+  border-radius: 4px; background: var(--wintheme); color: var(--txt-col); cursor: pointer;
+}
+.file-actions button:disabled { opacity: .45; cursor: default; }
+.file-actions button:focus-visible, .file-confirm button:focus-visible, .conticon:focus-visible { outline: 3px solid #2876b5; outline-offset: 2px; }
+.file-confirm-backdrop { position: absolute; inset: 0; z-index: 50; display: grid; place-items: center; background: #14233266; }
+.file-confirm { max-width: 420px; padding: 24px; border-radius: 8px; background: var(--wintheme); color: var(--txt-col); box-shadow: 0 10px 50px #0004; }
+.file-confirm h2 { font-size: 20px; margin-top: 0; }
+.file-confirm div { display: flex; justify-content: flex-end; gap: 10px; }
+.msfiles .conticon small { font-size: 10px; overflow-wrap: anywhere; text-align: center; }

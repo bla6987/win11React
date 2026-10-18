@@ -266,8 +266,8 @@ export const StartMenu = () => {
                 ui
                 rounded
                 width={26}
-                click="EXTERNAL"
-                payload="https://blueedge.me"
+                click="SETTINGS"
+                payload="full"
               />
               <div className="usName">{userName}</div>
             </div>

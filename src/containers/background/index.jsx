@@ -113,7 +113,7 @@ export const LockScreen = (props) => {
       className={"lockscreen " + (props.dir == -1 ? "slowfadein" : "")}
       data-unlock={unlocked}
       style={{
-        backgroundImage: `url(${`img/wallpaper/lock.jpg`})`,
+        backgroundImage: `url(${`img/wallpaper/lock.svg`})`,
       }}
       onClick={action}
       data-action="splash"
@@ -138,14 +138,14 @@ export const LockScreen = (props) => {
       <div className="fadeinScreen" data-faded={!lock} data-unlock={unlocked}>
         <Image
           className="rounded-full overflow-hidden"
-          src="img/asset/prof.jpg"
+          src="img/asset/prof.svg"
           w={200}
           ext
         />
         <div className="mt-2 text-2xl font-medium text-gray-200">
           {userName}
         </div>
-        <div className="flex items-center mt-6 signInBtn" onClick={proceed}>
+        <div className="flex items-center mt-6 signInBtn" role="button" tabIndex={0} onKeyDown={e => { if (e.key === "Enter" || e.key === " ") proceed(); }} onClick={proceed}>
           Sign in
         </div>
         {/*   <input type={passType?"text":"password"} value={password} onChange={action}

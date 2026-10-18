@@ -10,6 +10,15 @@ const defState = {
 
 const deskReducer = (state = defState, action) => {
   switch (action.type) {
+    case "FILERESTORE":
+      if (!action.shortcut || state.apps.some(app => app.name === action.shortcut.name)) return state;
+      return { ...state, apps: [...state.apps, action.shortcut] };
+    case "FILERECYCLE":
+      if (!action.shortcut) return state;
+      return { ...state, apps: state.apps.filter(app => app.name !== action.shortcut.name) };
+    case "DESKRECYCLE":
+      if (action.payload.name === "Recycle Bin") return state;
+      return { ...state, apps: state.apps.filter(app => app.name !== action.payload.name) };
     case "DESKREM":
       var arr = state.apps.filter((x) => x.name != action.payload);
 

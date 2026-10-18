@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import i18next from "i18next";
-import login from "../../../components/login";
+
 import { installApp, delApp } from "../../../actions";
 
 import { Icon, ToolBar } from "../../../utils/general";
@@ -10,33 +10,14 @@ import dirs from "./assets/dir.json";
 export const WnTerminal = () => {
   const wnapp = useSelector((state) => state.apps.terminal);
   const [stack, setStack] = useState(["OS [Version 10.0.22000.51]", ""]);
-  const [pwd, setPwd] = useState("C:\\Users\\Blue");
+  const [pwd, setPwd] = useState("C:\\Users\\owner");
   const [lastCmd, setLsc] = useState(0);
   const [wntitle, setWntitle] = useState("Terminal");
 
   const dispatch = useDispatch();
 
-  let IpDetails = [];
-  const getIPDetails = async () => {
-    try {
-      const response = await fetch("https://ipapi.co/json")
-        .then((response) => response.json())
-        .then((data) => {
-          IpDetails.push(data);
-        });
-    } catch (error) {
-      console.log(error);
-      // handling the error
-      IpDetails.push({
-        ip: "__network_error",
-        network: "__kindly check internet connection",
-        city: "",
-        region: "",
-        org: "",
-        postal: "",
-      });
-    }
-  };
+  // Reserved documentation address for this simulated computer.
+  const IpDetails = [{ ip: "192.0.2.1", network: "192.0.2.0/24", city: "Practice", region: "", org: "Simulated network", postal: "" }];
 
   const dirFolders = (isFile = "") => {
     var tdir = { ...dirs },
@@ -270,10 +251,9 @@ export const WnTerminal = () => {
     } else if (type == "title") {
       setWntitle(arg.length ? arg : "Terminal");
     } else if (type == "hostname") {
-      tmpStack.push("blue");
+      tmpStack.push("owner");
     } else if (type == "login") {
-      login();
-      tmpStack.push("started login");
+      tmpStack.push("This practice computer uses the local owner account. Online sign-in is unavailable.");
     } else if (type == "lang-test") {
       i18next.changeLanguage("fr-FR");
       tmpStack.push("French");
@@ -291,7 +271,7 @@ export const WnTerminal = () => {
         "OS Manufacturer:           ",
         "OS Configuration:          Standalone Workstation",
         "OS Build Type:             Multiprocessor Free",
-        "Registered Owner:          Blue",
+        "Registered Owner:          owner",
         "Registered Organization:   N/A",
         "Product ID:                7H1S1-5AP1R-473DV-3R5I0N",
       ];
@@ -482,7 +462,6 @@ export const WnTerminal = () => {
   };
 
   useEffect(() => {
-    getIPDetails();
 
     if (wnapp.dir && wnapp.dir != pwd) {
       setPwd(wnapp.dir);

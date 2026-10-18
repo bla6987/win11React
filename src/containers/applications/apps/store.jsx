@@ -343,7 +343,7 @@ const DetailPage = ({ app }) => {
           w={100}
           h={100}
           src={app.icon}
-          err="img/asset/mixdef.jpg"
+          err="img/asset/mixdef.svg"
         />
         <div className="flex flex-col items-center text-center relative">
           <div className="text-2xl font-semibold mt-6">{app.name}</div>
@@ -401,7 +401,7 @@ const DetailPage = ({ app }) => {
                       h={250}
                       src={x}
                       ext
-                      err="img/asset/mixdef.jpg"
+                      err="img/asset/mixdef.svg"
                     />
                   ))}
               </div>
@@ -471,7 +471,7 @@ const FrontPage = (props) => {
       <Image
         id="sthome"
         className="frontPage w-full"
-        src="img/store/lucacover.jpg"
+        src="img/store/lucacover.svg"
         ext
       />
       <div className="panelName absolute m-6 text-xl top-0">Home</div>

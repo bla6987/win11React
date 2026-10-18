@@ -97,9 +97,17 @@ export const Explorer = () => {
   const wnapp = useSelector((state) => state.apps.explorer);
   const files = useSelector((state) => state.files);
   const fdata = files.data.getId(files.cdir);
+  const inBin = files.cdir === files.data.special["%recyclebin%"];
+  const [confirmation, setConfirmation] = useState(null);
   const [cpath, setPath] = useState(files.cpath);
   const [searchtxt, setShText] = useState("");
   const dispatch = useDispatch();
+
+  const deleteSelected = () => {
+    if (!files.selected) return;
+    if (inBin) setConfirmation({ type: "FILEPURGE", id: files.selected, name: files.data.getId(files.selected).name });
+    else dispatch({ type: "FILERECYCLE", payload: files.selected });
+  };
 
   const handleChange = (e) => setPath(e.target.value);
   const handleSearchChange = (e) => setShText(e.target.value);
@@ -182,10 +190,23 @@ export const Explorer = () => {
         app={wnapp.action}
         icon={wnapp.icon}
         size={wnapp.size}
-        name="File Explorer"
+        name={inBin ? "Recycle Bin" : "File Explorer"}
       />
       <div className="windowScreen flex flex-col">
         <Ribbon />
+        <div className="file-actions" aria-label="File actions">
+          {inBin ? <>
+            <button disabled={!files.selected} onClick={() => dispatch({ type: "FILERESTORE", payload: files.selected })}>Restore selected item</button>
+            <button disabled={!files.selected} onClick={deleteSelected}>Delete permanently</button>
+            <button disabled={!fdata.data.length} onClick={() => setConfirmation({ type: "FILEEMPTYBIN" })}>Empty Recycle Bin</button>
+          </> : <button disabled={!files.selected || !!files.data.getId(files.selected)?.info.spid} onClick={deleteSelected}>Delete</button>}
+          <span role="status">{files.status}</span>
+        </div>
+        {confirmation && <div className="file-confirm-backdrop"><section className="file-confirm" role="dialog" aria-modal="true" aria-labelledby="delete-title" onKeyDown={e => { if (e.key === "Escape") setConfirmation(null); }}>
+          <h2 id="delete-title">{confirmation.type === "FILEEMPTYBIN" ? "Empty Recycle Bin?" : `Permanently delete ${confirmation.name}?`}</h2>
+          <p>These practice items cannot be restored after this action. Your real files are never affected.</p>
+          <div><button autoFocus onClick={() => setConfirmation(null)}>Cancel</button><button onClick={() => { dispatch({ type: confirmation.type, payload: confirmation.id }); setConfirmation(null); }}>Confirm deletion</button></div>
+        </section></div>}
         <div className="restWindow flex-grow flex flex-col">
           <div className="sec1">
             <Icon
@@ -236,7 +257,7 @@ export const Explorer = () => {
           </div>
           <div className="sec2">
             <NavPane />
-            <ContentArea searchtxt={searchtxt} />
+            <ContentArea searchtxt={searchtxt} onDelete={deleteSelected} />
           </div>
           <div className="sec3">
             <div className="item-count text-xs">{fdata.data.length} items</div>
@@ -265,28 +286,30 @@ export const Explorer = () => {
   );
 };
 
-const ContentArea = ({ searchtxt }) => {
+const ContentArea = ({ searchtxt, onDelete }) => {
   const files = useSelector((state) => state.files);
   const special = useSelector((state) => state.files.data.special);
-  const [selected, setSelect] = useState(null);
+  const selected = files.selected;
+  const inBin = files.cdir === special["%recyclebin%"];
   const fdata = files.data.getId(files.cdir);
   const dispatch = useDispatch();
 
   const handleClick = (e) => {
     e.stopPropagation();
-    setSelect(e.target.dataset.id);
+    dispatch({ type: "FILESELECT", payload: e.currentTarget.dataset.id });
   };
 
   const handleDouble = (e) => {
     e.stopPropagation();
-    handleFileOpen(e.target.dataset.id);
+    if (!inBin) handleFileOpen(e.currentTarget.dataset.id);
   };
 
   const emptyClick = (e) => {
-    setSelect(null);
+    dispatch({ type: "FILESELECT", payload: null });
   };
 
   const handleKey = (e) => {
+    if (e.key === "Delete") { e.preventDefault(); onDelete(); }
     if (e.key == "Backspace") {
       dispatch({ type: "FILEPREV" });
     }
@@ -297,16 +320,27 @@ const ContentArea = ({ searchtxt }) => {
       className="contentarea"
       onClick={emptyClick}
       onKeyDown={handleKey}
-      tabIndex="-1"
+      tabIndex="0"
     >
       <div className="contentwrap win11Scroll">
         <div className="gridshow" data-size="lg">
           {fdata.data.map((item, i) => {
             return (
-              item.name.includes(searchtxt) && (
+              item.name.toLowerCase().includes(searchtxt.toLowerCase()) && (
                 <div
                   key={i}
                   className="conticon hvtheme flex flex-col items-center prtclk"
+                  role="button"
+                  tabIndex={0}
+                  aria-label={item.name}
+                  aria-pressed={selected === item.id}
+                  onKeyDown={e => {
+                    if (e.key === " " || e.key === "Enter") {
+                      e.preventDefault(); e.stopPropagation();
+                      if (e.key === "Enter" && !inBin) handleFileOpen(item.id);
+                      else dispatch({ type: "FILESELECT", payload: item.id });
+                    }
+                  }}
                   data-id={item.id}
                   data-focus={selected == item.id}
                   onClick={handleClick}
@@ -314,13 +348,14 @@ const ContentArea = ({ searchtxt }) => {
                 >
                   <Image src={`icon/win/${item.info.icon}`} />
                   <span>{item.name}</span>
+                  {inBin && <small>From: {item.recycled?.location}<br />Deleted: {new Date(item.recycled?.deletedAt).toLocaleString()}</small>}
                 </div>
               )
             );
           })}
         </div>
         {fdata.data.length == 0 ? (
-          <span className="text-xs mx-auto">This folder is empty.</span>
+          <span className="text-xs mx-auto">{inBin ? "Recycle Bin is empty." : "This folder is empty."}</span>
         ) : null}
       </div>
     </div>
@@ -334,6 +369,7 @@ const NavPane = ({}) => {
   return (
     <div className="navpane win11Scroll">
       <div className="extcont">
+        <Dropdown icon="bin0" title="Recycle Bin" spid="%recyclebin%" notoggle />
         <Dropdown icon="star" title="Quick access" action="" isDropped>
           <Dropdown
             icon="down"
@@ -342,7 +378,7 @@ const NavPane = ({}) => {
             notoggle
             pinned
           />
-          <Dropdown icon="user" title="Blue" spid="%user%" notoggle pinned />
+          <Dropdown icon="user" title="owner" spid="%user%" notoggle pinned />
           <Dropdown
             icon="docs"
             title="Documents"
@@ -362,7 +398,7 @@ const NavPane = ({}) => {
           <Dropdown icon="pics" title="Pictures" spid="%pictures%" />
           <Dropdown icon="vid" title="Videos" spid="%videos%" />
           <Dropdown icon="disc" title="OS (C:)" spid="%cdrive%" />
-          <Dropdown icon="disk" title="Blue (D:)" spid="%ddrive%" />
+          <Dropdown icon="disk" title="Data (D:)" spid="%ddrive%" />
         </Dropdown>
       </div>
     </div>

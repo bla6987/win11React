@@ -360,7 +360,7 @@ export const Spotify = () => {
                 {queue[curr].albumArt ? (
                   <Image src={queue[curr].albumArt.to150()} w={56} ext lazy />
                 ) : (
-                  <Icon src="./img/asset/album.png" ext width={56} />
+                  <Icon src="./img/asset/album.svg" ext width={56} />
                 )}
                 <div className="sname ml-3">
                   <div
@@ -601,7 +601,7 @@ const Search = ({ sid, action }) => {
                 src={songResults[0].image.to150()}
                 ext
                 w={92}
-                err="/img/asset/mixdef.jpg"
+                err="/img/asset/mixdef.svg"
                 lazy
               />
               <div className="fplay">
@@ -676,7 +676,7 @@ const Search = ({ sid, action }) => {
                     src={card.image.to250()}
                     ext
                     w={200}
-                    err="/img/asset/mixdef.jpg"
+                    err="/img/asset/mixdef.svg"
                     onClick={action}
                     click="album"
                     payload={card.id}
@@ -746,7 +746,7 @@ const Playlist = ({ type, tdata, action, action2, sid, paused }) => {
       <div className="playinfo">
         <Image
           className="dpShad"
-          src={data.album_image || "/img/asset/mixdef.jpg"}
+          src={data.album_image || "/img/asset/mixdef.svg"}
           ext
           w={232}
           h={232}
@@ -806,7 +806,7 @@ const Playlist = ({ type, tdata, action, action2, sid, paused }) => {
                 <div className="sidx font-semibold gcol">{i + 1}</div>
               ) : null}
               {sid == song.song_id && !paused ? (
-                <Icon src="./img/asset/equaliser.gif" ext width={14} />
+                <Icon src="./img/asset/equaliser.svg" ext width={14} />
               ) : null}
 
               <div className="scol1">
@@ -816,7 +816,7 @@ const Playlist = ({ type, tdata, action, action2, sid, paused }) => {
                     w={40}
                     h={40}
                     ext
-                    err="/img/asset/mixdef.jpg"
+                    err="/img/asset/mixdef.svg"
                     lazy
                   />
                 ) : null}
@@ -944,7 +944,7 @@ const Home = ({ tab, action, sid, paused }) => {
                     src={card.img}
                     ext
                     w={200}
-                    err="/img/asset/mixdef.jpg"
+                    err="/img/asset/mixdef.svg"
                     onClick={action}
                     click={card.type}
                     payload={"[" + ix + "," + idx + "]"}
@@ -988,7 +988,7 @@ const Queue = ({ queue, curr, action2, paused }) => {
           {paused ? (
             "1"
           ) : (
-            <Icon src="./img/asset/equaliser.gif" ext width={16} />
+            <Icon src="./img/asset/equaliser.svg" ext width={16} />
           )}
         </div>
         <Image src={queue[curr].albumArt.to150()} w={40} ext lazy />

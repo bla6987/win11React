@@ -97,48 +97,19 @@ export const performApp = (act, menu) => {
   } else if (act == "delshort") {
     if (data.type) {
       var apps = store.getState().apps;
-      var app = Object.keys(apps).filter(
-        (x) =>
-          apps[x].action == data.type ||
-          (apps[x].payload == data.payload && apps[x].payload != null),
-      );
+      const app = Object.values(apps).find(app => app && (menu.dataset.name
+        ? app.name === menu.dataset.name
+        : app.action === data.type && (data.type !== "EXTERNAL" || app.payload === data.payload)));
 
-      app = apps[app];
       if (app) {
-        store.dispatch({ type: "DESKREM", payload: app.name });
+        store.dispatch({ type: "DESKRECYCLE", payload: app });
       }
     }
   }
 };
 
 export const delApp = (act, menu) => {
-  var data = {
-    type: menu.dataset.action,
-    payload: menu.dataset.payload,
-  };
-
-  if (act == "delete") {
-    if (data.type) {
-      var apps = store.getState().apps;
-      var app = Object.keys(apps).filter((x) => apps[x].action == data.type);
-      if (app) {
-        app = apps[app];
-        if (app.pwa == true || app.pwa == False /*what is that for ?*/) {
-          store.dispatch({ type: app.action, payload: "close" });
-          store.dispatch({ type: "DELAPP", payload: app.icon });
-
-          var installed = localStorage.getItem("installed");
-          if (!installed) installed = "[]";
-
-          installed = JSON.parse(installed);
-          installed = installed.filter((x) => x.icon != app.icon);
-          localStorage.setItem("installed", JSON.stringify(installed));
-
-          store.dispatch({ type: "DESKREM", payload: app.name });
-        }
-      }
-    }
-  }
+  if (act === "delete") performApp("delshort", menu);
 };
 
 export const installApp = (data) => {
@@ -246,11 +217,12 @@ export const loadSettings = () => {
     }
   }
 
+  if (["Blue Edge", "Blue"].includes(sett.person.name)) sett.person.name = "owner";
   if (sett.person.theme != "light") changeTheme();
 
   store.dispatch({ type: "SETTLOAD", payload: sett });
   if (import.meta.env.MODE != "development") {
-    loadWidget();
+    // Educational fork: no automatic requests to upstream news services.
   }
 };
 

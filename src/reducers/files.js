@@ -1,59 +1,43 @@
-import { Bin } from "../utils/bin";
-import fdata from "./dir.json";
+import { Bin } from "../utils/bin.js";
+import fdata from "./dir.json" with { type: "json" };
 
-const defState = {
-  cdir: "%user%",
-  hist: [],
-  hid: 0,
-  view: 1,
+export const createFileState = () => {
+  const data = new Bin();
+  data.parse(fdata);
+  const cdir = data.special["%user%"];
+  return { data, cdir, hist: [cdir], hid: 0, view: 1, selected: null, status: "", cpath: data.getPath(cdir) };
 };
 
-defState.hist.push(defState.cdir);
-defState.data = new Bin();
-defState.data.parse(fdata);
-
-const fileReducer = (state = defState, action) => {
-  var tmp = { ...state };
-  var navHist = false;
-
-  if (action.type === "FILEDIR") {
-    tmp.cdir = action.payload;
-  } else if (action.type === "FILEPATH") {
-    var pathid = tmp.data.parsePath(action.payload);
-    if (pathid) tmp.cdir = pathid;
-  } else if (action.type === "FILEBACK") {
-    var item = tmp.data.getId(tmp.cdir);
-    if (item.host) {
-      tmp.cdir = item.host.id;
-    }
-  } else if (action.type === "FILEVIEW") {
-    tmp.view = action.payload;
-  } else if (action.type === "FILEPREV") {
-    tmp.hid--;
-    if (tmp.hid < 0) tmp.hid = 0;
-    navHist = true;
-  } else if (action.type === "FILENEXT") {
-    tmp.hid++;
-    if (tmp.hid > tmp.hist.length - 1) tmp.hid = tmp.hist.length - 1;
-    navHist = true;
+const fileReducer = (state = createFileState(), action) => {
+  if (action.type === "FILESELECT") return { ...state, selected: action.payload };
+  if (action.type === "FILEVIEW") return { ...state, view: action.payload };
+  if (["FILERECYCLE", "FILERESTORE", "FILEPURGE", "FILEEMPTYBIN", "DESKRECYCLE"].includes(action.type)) {
+    const data = state.data.clone();
+    const ids = action.type === "FILEEMPTYBIN" ? [...data.getId(data.special["%recyclebin%"]).data].map(item => item.id) : [action.payload];
+    const method = { FILERECYCLE: "recycle", FILERESTORE: "restore", FILEPURGE: "purge", FILEEMPTYBIN: "purge", DESKRECYCLE: "recycleShortcut" }[action.type];
+    let count = 0;
+    ids.forEach(id => { if (data[method](id)) count++; });
+    if (!count) return { ...state, status: "No items changed. System folders cannot be deleted." };
+    const hist = state.hist.filter(id => data.getId(id) && (!data.isRecycled(id) || id === data.special["%recyclebin%"]));
+    const cdir = hist.includes(state.cdir) ? state.cdir : data.special["%documents%"];
+    if (!hist.includes(cdir)) hist.push(cdir);
+    const status = { FILERECYCLE: "Item moved to Recycle Bin.", FILERESTORE: "Item restored.", FILEPURGE: "Item permanently deleted.", FILEEMPTYBIN: "Recycle Bin emptied.", DESKRECYCLE: "Shortcut moved to Recycle Bin." }[action.type];
+    return { ...state, data, hist, hid: hist.lastIndexOf(cdir), cdir, cpath: data.getPath(cdir), selected: null, status };
   }
-
-  if (!navHist && tmp.cdir != tmp.hist[tmp.hid]) {
-    tmp.hist.splice(tmp.hid + 1);
-    tmp.hist.push(tmp.cdir);
-    tmp.hid = tmp.hist.length - 1;
+  let cdir = state.cdir, hist = [...state.hist], hid = state.hid;
+  if (action.type === "RECYCLEBIN") cdir = state.data.special["%recyclebin%"];
+  else if (action.type === "FILEDIR") cdir = state.data.special[action.payload] || action.payload;
+  else if (action.type === "FILEPATH") cdir = state.data.parsePath(action.payload) || cdir;
+  else if (action.type === "FILEBACK") cdir = state.data.getId(cdir).host?.id || cdir;
+  else if (action.type === "FILEPREV") { hid = Math.max(0, hid - 1); cdir = hist[hid]; }
+  else if (action.type === "FILENEXT") { hid = Math.min(hist.length - 1, hid + 1); cdir = hist[hid]; }
+  else return state;
+  const item = state.data.getId(cdir);
+  if (!item || item.type !== "folder" || (state.data.isRecycled(cdir) && cdir !== state.data.special["%recyclebin%"])) return state;
+  if (!["FILEPREV", "FILENEXT"].includes(action.type) && cdir !== hist[hid]) {
+    hist = hist.slice(0, hid + 1); hist.push(cdir); hid = hist.length - 1;
   }
-
-  tmp.cdir = tmp.hist[tmp.hid];
-  if (tmp.cdir.includes("%")) {
-    if (tmp.data.special[tmp.cdir] != null) {
-      tmp.cdir = tmp.data.special[tmp.cdir];
-      tmp[tmp.hid] = tmp.cdir;
-    }
-  }
-
-  tmp.cpath = tmp.data.getPath(tmp.cdir);
-  return tmp;
+  return { ...state, cdir, hist, hid, selected: null, status: "", cpath: state.data.getPath(cdir) };
 };
 
 export default fileReducer;
